@@ -1,11 +1,14 @@
 CC = gcc
-CFLAGS = -Wall -Wextra -pedantic
-TARGET = hola
-all: $(TARGET)
-$(TARGET): hola.o
-$(CC) $(CFLAGS) $^ -o $@
-hola.o: hola.c
-$(CC) $(CFLAGS) -c $< -o $@
+CFLAGS = -Wall -Wextra -pedantic -g
+TARGET = mensajeSecreto
+
+$(TARGET): mensajeSecreto.o
+	$(CC) $(CFLAGS) -o $(TARGET) mensajeSecreto.o
+
+mensajeSecreto.o: mensajeSecreto.c
+	$(CC) $(CFLAGS) -c mensajeSecreto.c -o mensajeSecreto.o
+
 clean:
-rm *.o $(TARGET)
+	rm -f *.o $(TARGET)
+
 .PHONY: all clean

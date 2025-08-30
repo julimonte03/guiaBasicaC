@@ -1,12 +1,12 @@
 CC = gcc
 CFLAGS = -Wall -Wextra -pedantic -g
-TARGET = mensajeSecreto
+TARGET = ej12
 
-$(TARGET): mensajeSecreto.o
-	$(CC) $(CFLAGS) -o $(TARGET) mensajeSecreto.o
+$(TARGET): ej12.o
+	$(CC) $(CFLAGS) -o $(TARGET) ej12.o
 
-mensajeSecreto.o: mensajeSecreto.c
-	$(CC) $(CFLAGS) -c mensajeSecreto.c -o mensajeSecreto.o
+ej12.o: ej12.c
+	$(CC) $(CFLAGS) -c ej12.c -o ej12.o
 
 clean:
 	rm -f *.o $(TARGET)
